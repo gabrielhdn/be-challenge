@@ -5,7 +5,7 @@ import {
 import EmployeeService from '../../services/EmployeeService';
 import formatDate from '../../utils/formatDate';
 import formatPhone from '../../utils/formatPhone';
-import { IEmployee } from '../../interfaces';
+import { IEmployee } from '../../interfaces/models/Employee';
 
 const useTable = (searchTerm: string) => {
   const [employees, setEmployees] = useState<IEmployee[]>([]);

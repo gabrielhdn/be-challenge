@@ -1,13 +1,15 @@
 import React from 'react';
-
-import { ITableProps } from '../../interfaces';
 import useTable from './useTable';
 import * as S from './styles';
 
 import ArrowDown from '../../assets/images/icons/ArrowDown.svg';
 import ArrowUp from '../../assets/images/icons/ArrowUp.svg';
 
-const Table: React.FC<ITableProps> = ({ searchTerm }) => {
+interface IProps {
+  searchTerm: string;
+}
+
+const Table: React.FC<IProps> = ({ searchTerm }) => {
   const {
     filteredEmployees,
     handleCardToggle,

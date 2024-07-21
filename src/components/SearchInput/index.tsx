@@ -1,8 +1,11 @@
 import SearchIcon from '../../assets/images/icons/Search.svg';
-import { ISearchInputProps } from '../../interfaces';
 import * as S from './styles';
 
-const SearchInput: React.FC<ISearchInputProps> = ({ onSearchTermChange }) => (
+interface IProps {
+  onSearchTermChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+}
+
+const SearchInput: React.FC<IProps> = ({ onSearchTermChange }) => (
   <S.Container className="input-container">
     <img src={SearchIcon} alt="Search" />
     <input
