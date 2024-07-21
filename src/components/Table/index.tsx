@@ -32,9 +32,7 @@ const Table: React.FC<IProps> = ({ searchTerm }) => {
       <tbody>
         {filteredEmployees.map((employee) => (
           <React.Fragment key={employee.id}>
-            <tr
-              className={selectedRowId === employee.id ? 'expanded' : ''}
-            >
+            <S.ExpandableRow selected={selectedRowId === employee.id}>
               <td className="image-data">
                 <img src={employee.image} alt="Employee" />
               </td>
@@ -50,27 +48,27 @@ const Table: React.FC<IProps> = ({ searchTerm }) => {
                   />
                 </button>
               </td>
-            </tr>
+            </S.ExpandableRow>
 
             {selectedRowId === employee.id && (
-            <tr className="expanded-row">
+            <S.ExpandedContent>
               <td colSpan={3}>
                 <div className="expanded-content">
                   <div>
-                    <p><strong>Cargo</strong></p>
+                    <h2><strong>Cargo</strong></h2>
                     <p>{employee.job}</p>
                   </div>
                   <div>
-                    <p><strong>Data de admissão</strong></p>
+                    <h2><strong>Data de admissão</strong></h2>
                     <p>{employee.admission_date}</p>
                   </div>
                   <div>
-                    <p><strong>Telefone</strong></p>
+                    <h2><strong>Telefone</strong></h2>
                     <p>{employee.phone}</p>
                   </div>
                 </div>
               </td>
-            </tr>
+            </S.ExpandedContent>
             )}
           </React.Fragment>
         ))}
