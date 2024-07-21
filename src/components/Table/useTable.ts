@@ -13,7 +13,7 @@ const useTable = (searchTerm: string) => {
 
   useEffect(() => {
     async function fetchEmployees() {
-      const employeesList = await EmployeeService.getEmployees();
+      const employeesList = await EmployeeService.getAll();
       const convertedEmployeesList = employeesList.map((employee: IEmployee) => ({
         ...employee,
         admission_date: formatDate(employee.admission_date),
