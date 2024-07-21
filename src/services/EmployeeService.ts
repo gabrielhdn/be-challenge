@@ -1,6 +1,9 @@
+const BASE_URL = import.meta.env.VITE_API_BASE;
+const PORT = import.meta.env.VITE_API_PORT;
+
 class EmployeeService {
   async getEmployees() {
-    const response = await fetch('http://localhost:3000/employees');
+    const response = await fetch(`${BASE_URL}:${PORT}/employees`);
     const employees = await response.json();
     return employees;
   }
