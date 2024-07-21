@@ -3,8 +3,7 @@ import {
 } from 'react';
 
 import EmployeeService from '../../services/EmployeeService';
-import formatDate from '../../utils/formatDate';
-import formatPhone from '../../utils/formatPhone';
+import EmployeeMapper from '../../services/mappers/EmployeeMapper';
 import { IEmployee } from '../../interfaces/models/Employee';
 
 const useTable = (searchTerm: string) => {
@@ -14,11 +13,7 @@ const useTable = (searchTerm: string) => {
   useEffect(() => {
     async function fetchEmployees() {
       const employeesList = await EmployeeService.getAll();
-      const convertedEmployeesList = employeesList.map((employee: IEmployee) => ({
-        ...employee,
-        admission_date: formatDate(employee.admission_date),
-        phone: formatPhone(employee.phone),
-      }));
+      const convertedEmployeesList = employeesList.map(EmployeeMapper.toDomain);
       setEmployees(convertedEmployeesList);
     }
     fetchEmployees();
