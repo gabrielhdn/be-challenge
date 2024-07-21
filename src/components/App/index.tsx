@@ -22,7 +22,7 @@ const App: React.FC = () => {
 
         <S.MainContent>
           <section>
-            <h4>Funcionários</h4>
+            <h1>Funcionários</h1>
             <SearchInput onSearchTermChange={handleSearchTermChange} />
           </section>
 

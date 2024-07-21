@@ -17,10 +17,12 @@ export default createGlobalStyle`
 
   h1 {
     font-size: 24px;
+    font-weight: 500;
   }
 
   h2 {
     font-size: 16px;
+    font-weight: 500;
   }
 
   h3 {
